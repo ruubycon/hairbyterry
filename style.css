@@ -81,6 +81,8 @@ hr {
   margin: 0;
 }
 
+
+
 .theme--grey {
   background-color: #f3f3f3;
 }
@@ -157,7 +159,7 @@ hr {
   top: 0;
   /*min-height: 66px;  Temporary (hopefully) solution -- find another if possible! */
   background-color: white;
-  box-shadow: 0 0 5px #555b;
+  box-shadow: 0 0 5px #555;
   z-index: 999;
 }
 
@@ -205,7 +207,7 @@ hr {
 @media only screen and (max-width: 1023px) {
   #header-wordmark {
     font-size: 22px;
-    top: 0.8rem;
+    top: 0.7rem;
   }
 }
 
@@ -360,29 +362,13 @@ hr {
 */
 
 .panel .content {
-  padding: 30px;
+  padding: 20px;
 }
 
 .panel .content-flex {
   display: flex;
   flex-direction: column;
 }
-
-
-/*.panel[data-type="window"] .content {
-  background-color:   
-}
-*/
-
-/*.panel[data-type="selectors"] {
-
-
-
-}*/
-
-
-
-
 
 .panel[data-type="splash-image"][data-v-align="center"] .content {
   justify-content: center;
@@ -404,28 +390,6 @@ hr {
 
 
 
-
-/*
-.panel[data-type="icons"] .grid-container {
-  display: flex;
-  flex-flow: row wrap;  
-  justify-content: center;
-}
-
-.panel[data-type="icons"] {
-  padding-top: 0;
-}
-
-.panel[data-type="icons"] figure {
-  width: 350px;
-  width: 70%;
-  max-width: 350px;
-  margin: auto;
-}
-
-.panel[data-type="icons"] img {
-  width: 100%;  
-}*/
 
 .panel[data-type="icons"] {
   padding: 60px;
@@ -693,7 +657,13 @@ body { /* FONT SIZE */ }
 
   header h1 { font-size: 2.5em; }
 
+  h1, h2, h3, h4 {
+    letter-spacing: -0.5px;
+  }
+
 } 
+
+
 
 
 @media only screen and (min-width: 576px) and (max-width: 1149px) {}
