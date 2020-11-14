@@ -13,14 +13,17 @@
 
   <!-- Custom Google fonts for our website! -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Tajawal|Oswald|Roboto|Roboto+Condensed|Anton|Montserrat" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet"> -->
 
   <!-- Latest compiled version of LINE AWESOME (icons) -->
   <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
+  <script src="https://kit.fontawesome.com/c734ee24fe.js" crossorigin="anonymous"></script>
+
   <!-- Latest compiled version of the animate.css library -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
 
-  <link rel="icon" href="">
+  <!-- <link rel="icon" href=""> -->
 
   <!-- Custom stylesheet for our website! -->
   <link rel="stylesheet" type="text/css" href="style.css" media="screen">
@@ -37,13 +40,23 @@
 </head>
 
 <body>
-
   <header id="site-header" role="banner">
     <section id="primary-navigation" class="nav-container nav-shadow">
+      <label id="menu-toggle" class="las la-bars" for="menu-btn"></label>
       <a id="header-wordmark" href="" rel="home">
         <span class="wordmark-part-1"> HAIR BY </span>
         <span class="wordmark-part-2"> TERRY </span>
       </a>
+      <input id="menu-btn" type="checkbox">
+      <nav id="gateway-collapse" class="nav-collapse-container">
+        <ul>
+          <li> <a class="gateway-link" href="#about"> ABOUT </a> </li>
+          <li> <a class="gateway-link" href="#services"> SERVICES </a> </li>
+          <li> <a class="gateway-link" href="#products"> PRODUCTS </a> </li>
+          <li> <a class="gateway-link" href="#stylists"> STYLISTS </a> </li>
+          <li> <a class="gateway-link" href="#contact"> CONTACT US </a> </li>
+        </ul>
+      </nav>
       <nav id="gateway" class="nav-gateway-container">
         <ul>
           <li class=""> <a href="#about"> About </a> </li>
@@ -54,20 +67,13 @@
           <li class=""> <a href="#contact"> Contact Us </a> </li>
         </ul>
       </nav>
-
-      <!-- <button id="menu-toggle" class=""><i class="fas fa-bars"></i></button> -->
-
-      <!-- <i class="las la-bars"></i> -->
-
-      <button id="menu-toggle" class="las la-bars"></button>
-
     </section>
   </header>
 
-  <main id="site-main" role="main">
+  <main id="site-main" class="" role="main">
 
   <!-- Landing Page section -->
-  <section class="panel theme--white" data-type="section" id="landing">
+  <section class="panel theme--white scrollspy" data-type="section" id="landing">
     <section class="panel" data-type="highlights" data-width="full">
       <section class="grid-container">
         <section class="highlight">
@@ -79,7 +85,7 @@
               <h1> Salon Experience </h1>
             </div>
 
-            <a class="btn btn-link" href="#about">learn more</a>
+            <a class="btn btn-link" href="#about">LEARN MORE </a>
             <!-- <div class="caption-sub"> <h4> Artists. Creative Professionals. Master Hairdressers. </h4> </div> -->
           </div>
         </section>
@@ -106,7 +112,7 @@
   </section>
 
   <!-- About Us section -->
-  <section class="panel theme--white" data-type="section" id="about">
+  <section class="panel theme--white scrollspy" data-type="section" id="about">
     <section class="panel" data-type="splash-image" data-width="full" data-img-loc="right" data-v-align="center">
       <section class="grid-container">
         <section class="content content-flex">
@@ -115,7 +121,7 @@
 
           <span class="caption"> Hours:  We take all clients on an appointment only-basis. </span>
 
-          <a class="btn btn-link" href="#contact"> Book Now </a>
+          <a class="btn btn-link" href="#contact"> BOOK NOW </a>
         </section>
 
         <div class="image-content" style="background-image: url(assets/images/matthew-kane-65194-unsplash.jpg);"></div>
@@ -132,9 +138,9 @@
         <h1> Our Services </h1>
       </header>
       <ul>
-        <li> <span class="btn btn-choose btn-active" data-value="tab-1"> Haircuts & Blowdry </span> </li>
-        <li> <span class="btn btn-choose" data-value="tab-2"> GOLDWELL Color Services </span> </li>
-        <li> <span class="btn btn-choose" data-value="tab-3"> Specialty Services </span> </li>
+        <li class="btn btn-choose btn-active" data-value="tab-1"> <span> Haircuts & Blowdry </span> </li>
+        <li class="btn btn-choose" data-value="tab-2"> <span> GOLDWELL Color Services </span> </li>
+        <li class="btn btn-choose" data-value="tab-3"> <span> Treatments & Highlights </span> </li>
       </ul>
 
     </section>
@@ -143,46 +149,83 @@
 
     <section class="panel" data-type="window" data-pd-top="none" data-pd-bottom="none">
       <section class="grid-container">
-
-        <div class="content theme--grey">
+        <div class="content content-active theme--grey" id="tab-1">
           <section class="tab" id="haircut_men">
-            <div class="services-header">
-              <h2 class="service-title"> Men's Haircut </h2>
-              <h4 class="service-price"> from $45 (up+) </h4>
-            </div>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam </p>
-          </section>
-
-          <section class="tab" id="haircut_women">
             <div class="services-header">
               <h2 class="service-title"> Women's Haircut </h2>
               <h4 class="service-price"> from $45 (up+) </h4>
             </div>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam </p>
+            <p> Taking into account your face shape, lifestyle and hair texture is the main priority during your consultation so that you leave with a manageable, wearable style that suits you. </p>
           </section>
-
+          <section class="tab" id="haircut_women">
+            <div class="services-header">
+              <h2 class="service-title"> Men's Haircut </h2>
+              <h4 class="service-price"> from $45 (up+) </h4>
+            </div>
+            <p> Created to enhance your masculine features and work with your lifestyle, your haircut is the foundation of your look. Consult with our skilled stylists for recommendations. </p>
+          </section>
           <section class="tab" id="haircut_women">
             <div class="services-header">
               <h2 class="service-title"> Children's Haircut </h2>
               <h4 class="service-price"> from $45 (up+) </h4>
             </div>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam </p>
+            <p> We believe that children should also have first-class haircuts. At Hair Salon, you can have your child’s hair cut the right way without any extra fuss. </p>
           </section>
         </div>
 
-        <div class="tab tab--hidden">
+        <div class="content content--hidden theme--grey" id="tab-2">
+          <section class="tab tab--hidden" id="haircut_men">
+            <div class="services-header">
+              <h2 class="service-title"> Root Touch Up </h2>
+              <h4 class="service-price"> from $45 (up+) </h4>
+            </div>
+            <p> Need to touch up your single color regrowth or cover up those new greys coming in at the root? Recommended every 6-8 weeks for maintenance. </p>
+          </section>
+          <section class="tab" id="haircut_women">
+            <div class="services-header">
+              <h2 class="service-title"> All Over Single Color </h2>
+              <h4 class="service-price"> from $45 (up+) </h4>
+            </div>
+            <p> From the roots to the ends, apply one single color all over your hair. Great for grey coverage or shiny solid tones of any single shade. </p>
+          </section>
+          <section class="tab" id="haircut_women">
+            <div class="services-header">
+              <h2 class="service-title"> Color Correction </h2>
+              <h4 class="service-price"> from $45 (up+) </h4>
+            </div>
+            <p> Must be booked by beginning with a complimentary consultation. </p>
+          </section>
+        </div>
 
-          
+        <div class="content content--hidden theme--grey" id="tab-3">
+          <section class="tab tab--hidden" id="haircut_men">
 
+            <p> Hello, world! </p>
+
+            <div class="services-header">
+              <h2 class="service-title"> Single Panel Highlight </h2>
+              <h4 class="service-price"> from $45 (up+) </h4>
+            </div>
+            <p> Just need a refresh? We will apply a few Balayage, Foils, Teasy-lights, Foiliage, Babylights or Lowlights down your part or at your face frame. This is the perfect little “pick you up”. </p>
+          </section>
+          <section class="tab" id="haircut_women">
+            <div class="services-header">
+              <h2 class="service-title"> Half-Head Highlight </h2>
+              <h4 class="service-price"> from $45 (up+) </h4>
+            </div>
+            <p> For the non-committal type, a lot less Balayage, Foils, Teasylights, Foiliage, Babylights or Lowlights, than a full. </p>
+          </section>
+          <section class="tab" id="haircut_women">
+            <div class="services-header">
+              <h2 class="service-title"> Full Head Highlight </h2>
+              <h4 class="service-price"> from $45 (up+) </h4>
+            </div>
+            <p> You’ll have a boat load of Balayage, Foils, Teasylights, Foiliage, Babylights or Lowlights in your hair. </p>
+          </section>
         </div>
 
         <div class="tab tab--aside">
-          
-          <figure> <img class="image-content" src="assets/images/matthew-kane-71727-unsplash.jpg"> </figure>
-
+          <figure> <img class="image-content" src="assets/images/matthew-kane-71727-unsplash.jpg"> </figure>  
         </div>
 
       </section>
@@ -256,22 +299,22 @@
     <section class="panel" data-width="full" data-h-align="left" >
       <section class="grid-container">
 
-        <section class="content theme--grey">
+        <section class="content">
 
           <header> <h1> Contact Us </h1> </header>
 
           <div class="content-flex">
-            <i class="las la-calendar-day"></i>
+            <i class="far fa-calendar-alt"></i>
             <span> We book all clients on an appointment only basis. </span>
           </div>
 
           <div class="content-flex">
-            <i class="las la-phone-volume"></i>
+            <i class="fas fa-phone-alt"></i>
             <span> (508) 479-8332 </span>
           </div>
 
           <div class="content-flex">
-            <i class="las la-map-marker"></i>
+            <i class="fas fa-map-marker-alt"></i>
             <span> 626 Main Street, Bolton MA 01740 </span>
           </div>
 
@@ -289,6 +332,10 @@
 <footer class="center">
   <section class="panel theme--black" data-width="super-compact">
     <p> &copy <script>document.write(new Date().getFullYear());</script> Hair by Terry. All Rights Reserved. </p>
+
+    <!-- <a href="http://www.google.com">
+    <i class="fab fa-facebook"></i>
+    </a> -->
     <small> designed by rubicon.one </small>
   </section>
 </footer>

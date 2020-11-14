@@ -1,14 +1,5 @@
 /* Hair by Terry CSS August 2018 by rubicon.one */
 
-/** TABLE OF CONTENTS
- *
- * 1. TYPOGRAPHY
-
-
-
- */ 
-
-
 /*** TYPOGRAPHY ***/
 
 @font-face {
@@ -31,12 +22,19 @@ h1, h2, h3, h4 {
   font-weight: bold;
 }
 
+/*body { position: fixed; }*/
+
 
 
 /*** UNIVERSAL ***/
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body, figure, h1, h2, h3, h4 {
   margin: 0; 
@@ -110,6 +108,11 @@ hr {
   text-align: left;
 }
 
+.blur {
+  /*filter*/
+  filter: blur(4px);
+}
+
 .btn {
   color: black;
   font-family: 'Roboto Condensed', sans-serif;
@@ -129,7 +132,7 @@ hr {
   text-align: center;
 }
 
-.tab {}
+.tab p { font-size: 1em; }
 
 .tab--primary {
   padding: 30px;
@@ -140,10 +143,6 @@ hr {
   padding: 45px 0px;
 }
 
-/*.panel[data-pd-top="small"] {
-  padding-top: 25px !important;
-}*/
-
 .panel[data-pd-top="none"] {
   padding-top: 0 !important;
 }
@@ -152,18 +151,26 @@ hr {
   padding-bottom: 0 !important;
 }
 
+.panel[data-pd-bottom="small"] {
+  padding-bottom: 15px;
+}
+
 #primary-navigation {
-  display: flex;
+/*  display: flex;
+  justify-content: space-between;
+  align-items: center;*/
   position: fixed;
   width: 100%;
+  text-align: center;
   top: 0;
-  /*min-height: 66px;  Temporary (hopefully) solution -- find another if possible! */
-  background-color: white;
+  /*background-color: white;*/
   box-shadow: 0 0 5px #555;
+/*  min-height: 50px;*/
   z-index: 999;
 }
 
 #primary-navigation #gateway {
+  float: right;
   margin-right: 35px;
 }
 
@@ -195,23 +202,58 @@ hr {
   color: red;
 }
 
+.nav-collapse-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  font-weight: bold;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+#menu-btn:checked ~ .nav-collapse-container {
+  overflow-y: hidden;
+  max-height: 500px;
+}
+
+#primary-navigation #gateway-collapse li {
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 20px;
+  /*border-bottom: 1px solid black; */
+}
+
+#primary-navigation #gateway-collapse li a {
+  /*padding: 15px;*/
+  /*border-bottom: 1px solid black;*/
+  text-decoration: none;
+  color: black;
+}
+
+#primary-navigation .nav-wordmark-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
 #header-wordmark {
-  font-size: 25px;
-  top: 0.9rem;
-  position: relative;
-  margin-left: 25px;
-  margin-right: auto;
+  display: block;
+  background-color: white;
+  padding: 10px 0;
+  font-size: 24px;
   text-decoration: none;
 }
+
+#menu-btn { display: none; }
 
 @media only screen and (max-width: 1023px) {
   #header-wordmark {
     font-size: 22px;
-    top: 0.7rem;
+    margin: 0 auto;
   }
 }
 
 .wordmark-part-1 {
+  display: inline-block;
+  margin-bottom: 0.1px;
   font-family: Bradley;
   color: black;
 }
@@ -224,14 +266,15 @@ hr {
 }
 
 #menu-toggle {
+  display: block;
+  position: absolute;
+  cursor: pointer;
   margin: 0;
-  margin-right: 25px;
-  padding: 12px 0px;
+  /*margin-left: 15px;*/
+  padding: 10px;
   border: 0;
   background-color: white;
-    /*font-family: "FontAwesome";*/
   font-size: 30px;
-  display: inline-block;
 }
 
 /*#menu-toggle:before {
@@ -358,20 +401,19 @@ hr {
 }
 
 
-/*PANEL CONTENT FIX LATER
-*/
+/* PANEL CONTENT FIX LATER */
 
 .panel .content {
   padding: 20px;
 }
 
-.panel .content-flex {
+.content-flex {
   display: flex;
-  flex-direction: column;
 }
 
 .panel[data-type="splash-image"][data-v-align="center"] .content {
   justify-content: center;
+  flex-direction: column;
   border: 3px solid red;
 }
 
@@ -455,7 +497,7 @@ hr {
   border: 1px lightgrey solid;
 }
 
-.tab--hidden {
+.content--hidden {
   display: none; }
 
 .tab-reveal {
@@ -521,6 +563,14 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 25px;
+}
+
+#contact .content-flex {
+  align-items: center;
+}
+
+#contact .content-flex span {
+  margin: 5px;
 }
 
 
@@ -621,7 +671,20 @@ hr {
 
 
 
+@media only screen and (min-width: 1024px) {
 
+  #header-wordmark { 
+    display: inline-block; 
+    float: left;
+    margin-left: 35px;
+  }
+
+  #primary-navigation { 
+    background-color: white; 
+  }
+
+
+}
 
 
 
@@ -652,6 +715,8 @@ body { /* FONT SIZE */ }
 
 /** FONT SIZE **/
 
+header p { font-size: 1.4em; }
+
 @media only screen and (max-width: 575px) {
   p { font-size: 1em; }
 
@@ -662,6 +727,13 @@ body { /* FONT SIZE */ }
   }
 
 } 
+
+#highlight--wordmark { 
+  font-size: 3.1em; 
+  margin-bottom: 9%;
+}
+
+.highlight--mini .excerpt--overlay { font-size: 1.3em; }
 
 
 
@@ -780,9 +852,11 @@ body { /* FONT SIZE */ }
 
 @media only screen and (max-width: 575px) {
   .panel[data-type="selectors"] li {
-    background-color: #f3f3f3;
-    border-bottom: none;
+    border: 1px solid black;
     padding: 15px 5px;
+  }
+  .panel[data-type="selectors"] .btn-active {
+    border: 1px solid red;
   }
 }
 
